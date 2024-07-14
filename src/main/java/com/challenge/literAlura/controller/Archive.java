@@ -3,7 +3,9 @@ package com.challenge.literAlura.controller;
 import com.challenge.literAlura.literalura.Menu;
 import com.challenge.literAlura.literalura.ScreenReset;
 import com.challenge.literAlura.model.Book;
+import com.challenge.literAlura.model.Language;
 import com.challenge.literAlura.repository.BookRepository;
+import lombok.Getter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +18,7 @@ public class Archive {
     private Page<Book> page;
     private String archiveInput = "";
     private static Integer pageNumber = 1;
+    @Getter
     private static String langOption = "all";
 
     public Archive(BookRepository bookRepository) {
@@ -51,10 +54,6 @@ public class Archive {
         }
 
         archiveInput = "";
-    }
-
-    public static String getLangOption() {
-        return langOption;
     }
 
     public static void setLangOption(String langOption) {

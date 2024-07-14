@@ -1,6 +1,8 @@
 package com.challenge.literAlura.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+
 import java.util.List;
 
 
@@ -12,6 +14,7 @@ public class Book {
     private Long id;
     @Column(unique = true, nullable = false)
     private Integer idBook;
+    @Getter
     @Column(nullable = false, length = 510)
     private String title;
     private Boolean copyright;
@@ -21,6 +24,7 @@ public class Book {
     private List<Subject> subjects;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Author> authors;
+    @Getter
     @Enumerated(EnumType.STRING)
     private Language language;
 
@@ -37,14 +41,6 @@ public class Book {
         this.authors = book.authors().stream().map(Author::new).toList();
         this.authors.forEach(author -> author.setBooks(this));
         this.language = Language.fromString(book.languages().get(0).trim());
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Language getLanguage() {
-        return language;
     }
 
     public void printBook() {

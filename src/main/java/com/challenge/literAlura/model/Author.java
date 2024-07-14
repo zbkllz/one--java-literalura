@@ -1,6 +1,7 @@
 package com.challenge.literAlura.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Getter
     private String name;
     private Integer birthYear;
     private Integer deathYear;
@@ -24,10 +26,6 @@ public class Author {
         this.name = author.name();
         this.birthYear = author.birthYear();
         this.deathYear = author.deathYear();
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setBooks(Book book) {

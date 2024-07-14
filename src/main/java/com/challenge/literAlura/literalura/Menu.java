@@ -65,21 +65,21 @@ public class Menu {
     }
 
 
-    // EntryPoint
+    // MainEntry
     public static void mainMenu() {
         System.out.println(mainMenu);
     }
-    // EntryPoint
+    // MainEntry
     public static void searchMenu() {
         System.out.println(searchMenu);
     }
-    // EntryPoint
+    // MainEntry
     public static void archiveMenu() { System.out.println(archiveMenu); }
-    // EntryPoint
+    // MainEntry
     public static void askName() { System.out.println("Digite um nome para busca: "); }
-    // EntryPoint
+    // MainEntry
     public static void exit() { System.out.println("Até a próxima :) ...\n"); }
-    // EntryPoint
+    // MainEntry
     public static void archiveMenuInfo (int pageNumber, Page<Book> page, List<Book> books) {
         System.out.println("Exibindo página " + pageNumber + " de " + page.getTotalPages());
         System.out.println("Livros nesta página: " + page.getNumberOfElements());
@@ -104,14 +104,14 @@ public class Menu {
     }
 
     // Catalogue
-    public static void pageNotFound() { System.out.println("Página: " + EntryPoint.getApiPage() + " não encontrada"); }
+    public static void pageNotFound() { System.out.println("Página: " + MainEntry.getApiPage() + " não encontrada"); }
     // Catalogue
     public static void pageAndLang() {
-        System.out.println("***** Página: " + EntryPoint.getApiPage() + " *****");
+        System.out.println("***** Página: " + MainEntry.getApiPage() + " *****");
         System.out.println("* Exibindo os idiomas *");
-        if (EntryPoint.getLangEn().equals("en") && EntryPoint.getLangPt().isEmpty()) {
+        if (MainEntry.getLangEn().equals("en") && MainEntry.getLangPt().isEmpty()) {
             System.out.println("+ Inglês\n");
-        } else if (EntryPoint.getLangPt().equals("pt") && EntryPoint.getLangEn().isEmpty()) {
+        } else if (MainEntry.getLangPt().equals("pt") && MainEntry.getLangEn().isEmpty()) {
             System.out.println("+ Português\n");
         } else {
             System.out.println("+ Inglês");
@@ -136,19 +136,19 @@ public class Menu {
     // CatalogueOptions
     public static void alreadySaved() { System.out.println("Livro/Livros já armazenado(s) anteriormente!\n"); }
 
-    // EntryPoint and Catalogue
+    // MainEntry and Catalogue
     public static void catalogueMenu() { System.out.println(catalogueMenu); }
     // Catalogue and CatalogueOptions
     public static void backToCatalogue() { System.out.println("Voltando ao catálogo...\n"); }
-    // EntryPoint and CatalogueOptions
+    // MainEntry and CatalogueOptions
     public static void askOption() { System.out.println("Selecione uma opção: "); }
-    // EntryPoint and CatalogueOptions
+    // MainEntry and CatalogueOptions
     public static void connecting() { System.out.println("Estabelecendo conexão...\n"); }
-    // EntryPoint and CatalogueOptions
+    // MainEntry and CatalogueOptions
     public static void invalidOption() { System.out.println("Digite uma opção válida."); }
-    // EntryPoint and CatalogueOptions
+    // MainEntry and CatalogueOptions
     public static void notFound() { System.out.println("Livro/Autor não encontrado."); }
-    // EntryPoint and CatalogueOptions
+    // MainEntry and CatalogueOptions
     public static void askPage() { System.out.println("Digite o número da página para busca: "); }
 
 }
