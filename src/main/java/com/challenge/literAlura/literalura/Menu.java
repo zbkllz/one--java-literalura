@@ -9,25 +9,25 @@ import java.util.List;
 public class Menu {
     private static final String mainMenu = """
             
-            ***** Literalura *****
+            Seja bem-vindo(a) ao LiterAlura!
             
-            +++ Escolha uma opção:
+            Escolha uma opção:
             
-            1 - Exibir catálogo online
-            2 - Buscar título/autor no catálogo online
-            3 - Consultar livros salvos no banco de dados
-            4 - Consultar autores salvos no banco de dados
+            1 - Exibir catálogo
+            2 - Buscar título/autor no catálogo
+            3 - Consultar livros salvos
+            4 - Consultar autores salvos
             0 - Sair
             """;
     private static final String searchMenu = """
-            +++ Menu da Busca por Título/Autor:
+           Menu da Busca por Título/Autor:
             
             1 - Salvar todos os livros desta página
             2 - Salvar livro por id
             0 - Voltar ao menu principal
             """;
     private static final String catalogueMenu = """
-            +++ Menu do Catálogo:
+            Menu do Catálogo:
             
             1 - Página anterior
             2 - Próxima página
@@ -38,20 +38,20 @@ public class Menu {
             0 - Voltar ao menu principal
             """;
     private static final String archiveMenu = """
-            +++ Livros do Banco de Dados:
-            
+           Livros salvos:
+           
             1 - Página anterior
             2 - Pŕoxima página
-            3 - Buscar página no banco de dados
+            3 - Buscar página
             4 - Filtrar livros por idioma
             0 - Voltar ao menu principal
-            """;
+           """;
     private static final String authorMenu = """
-            +++ Autores do Banco de Dados:
+            Autores salvos:
             
             1 - Página anterior
             2 - Pŕoxima página
-            3 - Buscar página no banco de dados
+            3 - Buscar página 
             4 - Filtrar autores vivos em determinado ano
             0 - Voltar ao menu principal
             """;

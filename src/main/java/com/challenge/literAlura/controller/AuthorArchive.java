@@ -30,8 +30,8 @@ public class AuthorArchive {
             Menu.askOption();
             authorInput = scanner.nextLine();
             ScreenReset.clear();
-//            AuthorArchiveOptions authorArchiveOptions = new AuthorArchiveOptions(authorRepository, authorInput, page, pageNumber);
-//            authorArchiveOptions.checkOption();
+            AuthorArchiveOptions authorArchiveOptions = new AuthorArchiveOptions(authorRepository, authorInput, page, pageNumber);
+            authorArchiveOptions.checkOption();
         }
 
         authorInput = "";

@@ -21,7 +21,7 @@ public class Book {
     private String copyrightText;
     private Integer downloadCount;
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private List<Subject> subjects;
+    private List<Theme> themes;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Author> authors;
     @Getter
@@ -36,8 +36,8 @@ public class Book {
         this.copyright = book.copyright();
         this.copyrightText = this.copyright ? "Sim" : "Não";
         this.downloadCount = book.downloadCount();
-        this.subjects = book.subjects().stream().map(Subject::new).toList();
-        this.subjects.forEach(subject -> subject.setBook(this));
+        this.themes = book.subjects().stream().map(Theme::new).toList();
+        this.themes.forEach(theme -> theme.setBook(this));
         this.authors = book.authors().stream().map(Author::new).toList();
         this.authors.forEach(author -> author.setBooks(this));
         this.language = Language.fromString(book.languages().get(0).trim());
@@ -57,9 +57,9 @@ public class Book {
         }
         System.out.println("--- Possui copyright? " + copyrightText);
         System.out.println("--- Número de downloads: " + downloadCount);
-        if (subjects != null) {
+        if (themes != null) {
             System.out.println("--- Temas: ");
-            subjects.forEach(subject -> System.out.println("+ " + subject.getName()));
+            themes.forEach(theme -> System.out.println("+ " + theme.getName()));
         }
         System.out.println();
     }
